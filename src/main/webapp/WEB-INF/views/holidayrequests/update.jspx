@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+  	 <page:show id="ps_holiday_domain_HolidayRequest" object="${holidayRequestUpdateForm}" path="/holidayrequests" z="XuCOf++mdxOgtMSZFI+Tx1tET2M=">
+ 
+    <form:update id="fu_holiday_domain_HolidayRequest" modelAttribute="holidayRequestUpdateForm" path="/holidayrequests" z="7uYDgxaN4/x5mtkKqMMHaT9236A=">
+  
+       <field:display field="employee" id="s_holiday_domain_HolidayRequest_employee" object="${holidayRequestUpdateForm}" z="q17zWqcpZV1VBE6RqeCRDHDmJx8="/>
+        <field:display date="true" dateTimePattern="${holidayRequest_fromdate_date_format}" field="fromDate" id="s_holiday_domain_HolidayRequest_fromDate" object="${holidayRequestUpdateForm}" z="52hh8UCwcvAtQHYcok3DkiF495c="/>
+        <field:display date="true" dateTimePattern="${holidayRequest_todate_date_format}" field="toDate" id="s_holiday_domain_HolidayRequest_toDate" object="${holidayRequestUpdateForm}" z="AKoqiEoTgAjazJBKPEmULz0BHwQ="/>
+        <field:display field="approvedBy" id="s_holiday_domain_HolidayRequest_approvedBy" object="${holidayRequestUpdateForm}" z="SnidHb18S9n5d5OtFj3MAhjpZ+Y="/>
+        <field:input field="comment" id="c_holiday_domain_HolidayRequest_comment" z="3pr3MJAcbSjpYu9YBFrOpydsK0o="/>
+    </form:update>
+    </page:show> 
+</div>

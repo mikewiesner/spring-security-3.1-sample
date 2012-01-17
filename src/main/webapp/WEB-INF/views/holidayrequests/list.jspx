@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_holiday_domain_HolidayRequest" items="${holidayrequests}" z="E5dKujRKYc6DApXFwhp1tFsHm8w=">
+        <table:table data="${holidayrequests}" id="l_holiday_domain_HolidayRequest" path="/holidayrequests" z="8tIMQjWJ5anG9UjPoBAO8MsqNNo=">
+            <table:column id="c_holiday_domain_HolidayRequest_employee" property="employee" z="I94qq0sSs2ayk6kkkARAf9HaENg="/>
+            <table:column id="c_holiday_domain_HolidayRequest_fromDate" property="fromDate" z="vyN9bcET7zVB156yB2K4xhtPTRQ="/>
+            <table:column id="c_holiday_domain_HolidayRequest_toDate" property="toDate" z="wJAxD+r/2nNoMpu513g2rirdgb0="/>
+            <table:column id="c_holiday_domain_HolidayRequest_approvedBy" property="approvedBy" z="C0f1QtgP+evoNVVY/p0CAQ9bkHM="/>
+            <table:column id="c_holiday_domain_HolidayRequest_comment" property="comment" z="epxEuYZeiANc6pwUmqxNtwj9OIg="/>
+        </table:table>
+    </page:list>
+</div>
