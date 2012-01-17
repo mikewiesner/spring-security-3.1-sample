@@ -89,7 +89,6 @@
             </td>
           </c:if>
             <td>
-         	 <c:if test="${item.deletable}">
               <spring:url value="${path}/${item[typeIdFieldName]}" var="delete_form_url" />
               <spring:url value="/resources/images/delete.png" var="delete_image_url" />
               <form:form action="${fn:escapeXml(delete_form_url)}" method="DELETE">
@@ -107,7 +106,6 @@
                   <input name="size" type="hidden" value="${fn:escapeXml(param.size)}" />
                 </c:if>
               </form:form>
-              </c:if>
             </td>
           
         </tr>

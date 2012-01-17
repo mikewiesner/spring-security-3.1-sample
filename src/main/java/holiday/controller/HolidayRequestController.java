@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.core.convert.support.GenericConversionService;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -38,9 +39,6 @@ public class HolidayRequestController {
 	@Autowired
 	private HolidayService holidayService;
 	
-	@Autowired
-	private UserContextService userContextService;
-
 	@RequestMapping(method = RequestMethod.POST)
 	public String create(@Valid HolidayRequest holidayRequest,
 			BindingResult result, Model model, HttpServletRequest request) {
@@ -59,7 +57,7 @@ public class HolidayRequestController {
 	public String createForm(Model model) {
 		HolidayRequest object = new HolidayRequest();
 		
-		object.setEmployee(userContextService.getCurrentUser());
+		object.setEmployee(SecurityContextHolder.getContext().getAuthentication().getName());
 		model.addAttribute("holidayRequest", object);
 		addDateTimeFormatPatterns(model);
 		return "holidayrequests/create";

@@ -27,14 +27,5 @@
 		</authentication-provider>
 	</authentication-manager>
 	
-	<global-method-security secured-annotations="enabled" pre-post-annotations="enabled">
-		<expression-handler ref="expHandler"/>
-	</global-method-security>
-	
-	<b:bean id="expHandler" class="org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler">
-		<b:property name="permissionEvaluator">
-			<b:bean  class="holiday.security.HolidayPermissionEvaluator"/>
-		</b:property>
-	</b:bean>
 
 </b:beans>

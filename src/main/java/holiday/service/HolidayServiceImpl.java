@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,13 +19,10 @@ public class HolidayServiceImpl implements HolidayService {
 	@PersistenceContext
 	private transient EntityManager entityManager;
 	
-	@Autowired
-	private UserContextService userContextService;
-
 
 	@Transactional
 	public void create(HolidayRequest hr) {
-		hr.setEmployee(userContextService.getCurrentUser());
+		hr.setEmployee(SecurityContextHolder.getContext().getAuthentication().getName());
 		this.entityManager.persist(hr);
 	}
 
