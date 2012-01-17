@@ -3,7 +3,9 @@ package holiday.security;
 import javax.persistence.Transient;
 
 public aspect SecureEntityAspect {
- 
+
+	declare parents : holiday.domain.* implements SecureEntity;
+
 	@Transient
 	private transient boolean SecureEntity.deletable = false;
 

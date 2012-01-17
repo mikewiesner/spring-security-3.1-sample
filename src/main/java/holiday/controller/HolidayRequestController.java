@@ -39,6 +39,9 @@ public class HolidayRequestController {
 	@Autowired
 	private HolidayService holidayService;
 	
+	@Autowired
+	private UserContextService userContextService;
+
 	@RequestMapping(method = RequestMethod.POST)
 	public String create(@Valid HolidayRequest holidayRequest,
 			BindingResult result, Model model, HttpServletRequest request) {
@@ -57,7 +60,7 @@ public class HolidayRequestController {
 	public String createForm(Model model) {
 		HolidayRequest object = new HolidayRequest();
 		
-		object.setEmployee(SecurityContextHolder.getContext().getAuthentication().getName());
+		object.setEmployee(userContextService.getCurrentUser());
 		model.addAttribute("holidayRequest", object);
 		addDateTimeFormatPatterns(model);
 		return "holidayrequests/create";
